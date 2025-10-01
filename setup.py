@@ -1,5 +1,5 @@
 # python3 setup.py install
-from setuptools import setup
+from setuptools import setup, find_packages
 import os
 from torch.utils.cpp_extension import BuildExtension, CUDAExtension, CppExtension
 import os
@@ -53,6 +53,7 @@ else:
 setup(
     name="pointops",
     author="Hengshuang Zhao",
+    py_modules=["pointops"],
     ext_modules=ext_modules,
     cmdclass={"build_ext": BuildExtension},
 )
