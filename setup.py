@@ -10,7 +10,7 @@ os.environ["OPT"] = " ".join(
     flag for flag in opt.split() if flag != "-Wstrict-prototypes"
 )
 
-use_cuda = os.getenv("USE_CUDA", "0").lower() in ("1", "true", "yes")
+use_cuda = os.getenv("POINTOPS_USE_CUDA", "0").lower() in ("1", "true", "yes")
 if use_cuda:
     ext_modules = [
         CUDAExtension(
